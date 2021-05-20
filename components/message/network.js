@@ -1,6 +1,3 @@
-const {
-    text
-} = require('express');
 const express = require('express');
 const response = require('../../Network/response');
 const controller = require('./controller')
