@@ -13,6 +13,4 @@ function listUsers(){
 module.exports = {
     add: addUser,
     list: listUsers,
-
-
 }

@@ -4,8 +4,7 @@ const controller = require('./controller')
 const router = express.Router();
 
 router.get('/', function (req, res) {
-    const filterMessages = req.query.user || null;
-
+    const filterMessages = req.body.user || null;
     controller.getMessages(filterMessages)
         .then((messageList) => {
             response.success(req, res, messageList, 200)
@@ -26,7 +25,7 @@ router.post('/', function (req, res) {
 });
 
 router.patch('/:id', function (req, res) {
-    controller.updateMessage(req.params.id, req.body.message)
+    controller.updateMessage(req.body.id, req.body.message)
         .then((data) => {
             response.success(req, res, data, 200)
         })
